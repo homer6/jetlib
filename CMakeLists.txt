@@ -4,7 +4,11 @@ set( MAIN_EXECUTABLE test )
 project( ${MAIN_EXECUTABLE} CXX C )
 #add_subdirectory( lib )
 
-set( JET_LIBRARY_SOURCES lib/File.cc )
+set( JET_LIBRARY_SOURCES
+    lib/Exception.cc
+    lib/File.cc
+    lib/Utf8String.cc
+)
 
 add_library( jet ${JET_LIBRARY_SOURCES} )
 
@@ -19,5 +23,5 @@ target_link_libraries( ${MAIN_EXECUTABLE} jet )
 
 if( CMAKE_COMPILER_IS_GNUCXX )
     message( STATUS "GCC detected, adding compile flags" )
-    set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3" )
+    set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3 -std=gnu++0x" )
 endif( CMAKE_COMPILER_IS_GNUCXX )
