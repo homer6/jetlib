@@ -10,7 +10,8 @@ set( JET_LIBRARY_SOURCES
     lib/Utf8String.cc
 )
 
-add_library( jet ${JET_LIBRARY_SOURCES} )
+add_library( jet_shared SHARED ${JET_LIBRARY_SOURCES} )
+add_library( jet_static STATIC ${JET_LIBRARY_SOURCES} )
 
 set( LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/build )
 set( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/build )
@@ -18,7 +19,7 @@ set( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/build )
 include_directories( include )
 
 add_executable( ${MAIN_EXECUTABLE} tests/main.cc )
-target_link_libraries( ${MAIN_EXECUTABLE} jet )
+target_link_libraries( ${MAIN_EXECUTABLE} jet_shared )
 
 
 if( CMAKE_COMPILER_IS_GNUCXX )
