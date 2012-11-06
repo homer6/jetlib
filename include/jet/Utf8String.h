@@ -18,6 +18,7 @@ namespace jet{
             Utf8String( const Utf8String& other );
             explicit Utf8String( Utf8String&& other );
             explicit Utf8String( const char *source_string, size_t size_in_bytes );
+            explicit Utf8String( const char *source_string );    //don't provide unsafe strings!!
             explicit Utf8String( char source_character );
             explicit Utf8String( const std::string &source_string );
             explicit Utf8String( const Utf8Character &other );
@@ -28,6 +29,10 @@ namespace jet{
 
             Utf8String& operator+=( const Utf8String &right );
             const Utf8String operator+( const Utf8String &right );
+
+            Utf8String& operator+=( const char right );
+            const Utf8String operator+( const char right );
+
 
             friend void swap( Utf8String& first, Utf8String& second );
             friend std::ostream& operator<<( std::ostream &output_stream, const Utf8String &output_string );
