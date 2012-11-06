@@ -34,6 +34,8 @@ namespace jet{
             friend std::ostream& print_as_binary( std::ostream &output_stream, const Utf8String &output_string );
 
 
+            char getAsciiCharacterAtIndex( size_t index ) const;
+
             //clear out the string to the default values
             void clear();
             bool isEmpty();  //determines if this string is empty

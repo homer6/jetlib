@@ -39,6 +39,8 @@ namespace jet{
 
             char getAsciiCharacter() const;
 
+
+
             //clear out the string to the default values
             void clear();
 
