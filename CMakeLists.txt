@@ -8,6 +8,7 @@ set( JET_LIBRARY_SOURCES
     lib/Exception.cc
     lib/File.cc
     lib/Utf8String.cc
+    lib/Utf8Character.cc
 )
 
 add_library( jet_shared SHARED ${JET_LIBRARY_SOURCES} )

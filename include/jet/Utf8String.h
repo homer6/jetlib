@@ -4,8 +4,12 @@
 #include <string>
 #include <iostream>
 
+#include "Utf8Character.h"
+
 
 namespace jet{
+
+    class Utf8Character;
 
     class Utf8String{
 
@@ -14,7 +18,9 @@ namespace jet{
             Utf8String( const Utf8String& other );
             explicit Utf8String( Utf8String&& other );
             explicit Utf8String( const char *source_string, size_t size_in_bytes );
+            explicit Utf8String( char source_character );
             explicit Utf8String( const std::string &source_string );
+            explicit Utf8String( const Utf8Character &other );
             virtual ~Utf8String();
 
             Utf8String& operator=( const Utf8String &other );
@@ -24,12 +30,16 @@ namespace jet{
             const Utf8String operator+( const Utf8String &right );
 
             friend void swap( Utf8String& first, Utf8String& second );
-            friend std::ostream& operator<<( std::ostream &out, const Utf8String &output_string );
+            friend std::ostream& operator<<( std::ostream &output_stream, const Utf8String &output_string );
+            friend std::ostream& print_as_binary( std::ostream &output_stream, const Utf8String &output_string );
+
 
             //clear out the string to the default values
             void clear();
+            bool isEmpty();  //determines if this string is empty
             unsigned int getSize();  //alias of getLength (number of characters)
             unsigned int getLength();  //alias of getSize (number of characters)
+            void printAsBinary( std::ostream& output_stream );    //prints a full binary representation of this string to the supplied output stream
 
         protected:
             bool include_bom;
