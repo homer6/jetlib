@@ -26,6 +26,7 @@ namespace jet{
 
             Utf8String& operator=( const Utf8String &other );
             Utf8String& operator=( Utf8String &&other );
+            Utf8String& operator=( const char *other );
 
             Utf8String& operator+=( const Utf8String &right );
             const Utf8String operator+( const Utf8String &right );
@@ -40,6 +41,7 @@ namespace jet{
 
 
             char getAsciiCharacterAtIndex( size_t index ) const;
+            const char* getCString() const;
 
             //clear out the string to the default values
             void clear();
