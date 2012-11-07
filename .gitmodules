@@ -1,9 +1,9 @@
 [submodule "docs"]
 	path = docs
-	url = git@github.com:homer6/jetlib_docs.git
+	url = git://github.com/homer6/jetlib_docs.git
 [submodule "tests"]
 	path = tests
-	url = git@github.com:homer6/jetlib_tests.git
+	url = git://github.com/homer6/jetlib_tests.git
 [submodule "lib"]
 	path = lib
-	url = git@github.com:homer6/jetlib_lib.git
+	url = git://github.com/homer6/jetlib_lib.git
