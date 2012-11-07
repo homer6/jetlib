@@ -12,7 +12,6 @@ namespace jet{
             Exception( const char *exception_message );
 
 
-        protected:
             Utf8String message;
 
     };
