@@ -66,7 +66,7 @@ namespace jet{
 
         public:
 
-            bool operator()( Utf8String const &left, Utf8String const &right );
+            bool operator()( Utf8String const &left, Utf8String const &right ) const;
 
     };
 
