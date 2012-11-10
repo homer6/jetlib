@@ -45,9 +45,9 @@ namespace jet{
 
             //clear out the string to the default values
             void clear();
-            bool isEmpty();  //determines if this string is empty
-            unsigned int getSize();  //alias of getLength (number of characters)
-            unsigned int getLength();  //alias of getSize (number of characters)
+            bool isEmpty() const;  //determines if this string is empty
+            unsigned int getSize() const;  //alias of getLength (number of characters)
+            unsigned int getLength() const;  //alias of getSize (number of characters)
             void printAsBinary( std::ostream& output_stream );    //prints a full binary representation of this string to the supplied output stream
 
         protected:
@@ -58,6 +58,15 @@ namespace jet{
 
             //assumption: when size_of_character_data == 0, characters == NULL
             //            and has no heap allocation
+
+    };
+
+
+    class Utf8StringComparator{
+
+        public:
+
+            bool operator()( Utf8String const &left, Utf8String const &right );
 
     };
 
