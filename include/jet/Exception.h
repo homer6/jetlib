@@ -10,6 +10,7 @@ namespace jet{
 
         public:
             Exception( const char *exception_message );
+            Exception( const Utf8String exception_message );
 
 
             Utf8String message;

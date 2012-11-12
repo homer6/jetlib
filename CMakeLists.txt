@@ -7,6 +7,7 @@ project( ${MAIN_EXECUTABLE} CXX C )
 set( JET_LIBRARY_SOURCES
     lib/Exception.cc
     lib/File.cc
+    lib/Directory.cc
     lib/Utf8String.cc
     lib/Utf8Character.cc
 )
@@ -25,5 +26,5 @@ target_link_libraries( ${MAIN_EXECUTABLE} jet_shared )
 
 if( CMAKE_COMPILER_IS_GNUCXX )
     message( STATUS "GCC detected, adding compile flags" )
-    set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3 -std=gnu++0x" )
+    set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3 -std=gnu++0x -g" )
 endif( CMAKE_COMPILER_IS_GNUCXX )

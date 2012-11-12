@@ -17,6 +17,8 @@ namespace jet{
             void write( const char *output );
             Utf8String getContents();
 
+            Utf8String getFilename() const;
+
         protected:
             int state;
             Utf8String filename;
