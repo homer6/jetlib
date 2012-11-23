@@ -51,6 +51,8 @@ namespace jet{
             unsigned int getLength() const;  //alias of getSize (number of characters)
             void printAsBinary( std::ostream& output_stream );    //prints a full binary representation of this string to the supplied output stream
 
+            Utf8String toCamelCase() const;
+
         protected:
             bool include_bom;
             size_t number_of_characters; //in characters
