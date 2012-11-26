@@ -52,6 +52,8 @@ namespace jet{
             void printAsBinary( std::ostream& output_stream );    //prints a full binary representation of this string to the supplied output stream
 
             Utf8String toCamelCase() const;
+            Utf8String toLowerCase() const;
+            Utf8String toUpperCase() const;
 
         protected:
             bool include_bom;
