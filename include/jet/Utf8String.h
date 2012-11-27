@@ -45,6 +45,12 @@ namespace jet{
                 int compare( const char* other );
                 int compare( const std::string& other );
 
+                static int compare( Utf8String const &left, Utf8String const &right );
+                static int compare( const char* left, Utf8String const &right );
+                static int compare( Utf8String const &left, const char* right );
+                static int compare( const std::string& left, Utf8String const &right );
+                static int compare( Utf8String const &left, const std::string& right );
+
                 friend bool operator==( const Utf8String& lhs, const Utf8String& rhs );
                 friend bool operator==( const char* lhs, const Utf8String& rhs );
                 friend bool operator==( const Utf8String& lhs, const char* rhs );
@@ -117,7 +123,7 @@ namespace jet{
 
         public:
 
-            int operator()( Utf8String const &left, Utf8String const &right ) const;
+            bool operator()( Utf8String const &left, Utf8String const &right ) const;
 
     };
 
