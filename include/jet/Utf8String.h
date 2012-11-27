@@ -20,20 +20,66 @@ namespace jet{
             explicit Utf8String( const char *source_string, size_t size_in_bytes );
             explicit Utf8String( const char *source_string );    //don't provide unsafe strings!!
             explicit Utf8String( char source_character );
-            explicit Utf8String( const std::string &source_string );
-            explicit Utf8String( const Utf8Character &other );
+            explicit Utf8String( const std::string& source_string );
+            explicit Utf8String( const Utf8Character& other );
             Utf8String( int number );
             virtual ~Utf8String();
 
-            Utf8String& operator=( const Utf8String &other );
-            Utf8String& operator=( Utf8String &&other );
-            Utf8String& operator=( const char *other );
 
-            Utf8String& operator+=( const Utf8String &right );
-            Utf8String operator+( const Utf8String &right );
+            //assignment operators
 
-            Utf8String& operator+=( const char right );
-            Utf8String operator+( const char right );
+                Utf8String& operator=( const Utf8String &other );
+                Utf8String& operator=( Utf8String &&other );
+                Utf8String& operator=( const char *other );
+
+                Utf8String& operator+=( const Utf8String &right );
+                Utf8String operator+( const Utf8String &right );
+
+                Utf8String& operator+=( const char right );
+                Utf8String operator+( const char right );
+
+
+            //comparison operators
+
+                int compare( const Utf8String& other );
+                int compare( const char* other );
+                int compare( const std::string& other );
+
+                friend bool operator==( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator==( const char* lhs, const Utf8String& rhs );
+                friend bool operator==( const Utf8String& lhs, const char* rhs );
+                friend bool operator==( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator==( const Utf8String& lhs, const std::string& rhs );
+
+                friend bool operator!=( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator!=( const char* lhs, const Utf8String& rhs );
+                friend bool operator!=( const Utf8String& lhs, const char* rhs );
+                friend bool operator!=( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator!=( const Utf8String& lhs, const std::string& rhs );
+
+                friend bool operator<( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator<( const char* lhs, const Utf8String& rhs );
+                friend bool operator<( const Utf8String& lhs, const char* rhs );
+                friend bool operator<( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator<( const Utf8String& lhs, const std::string& rhs );
+
+                friend bool operator>( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator>( const char* lhs, const Utf8String& rhs );
+                friend bool operator>( const Utf8String& lhs, const char* rhs );
+                friend bool operator>( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator>( const Utf8String& lhs, const std::string& rhs );
+
+                friend bool operator<=( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator<=( const char* lhs, const Utf8String& rhs );
+                friend bool operator<=( const Utf8String& lhs, const char* rhs );
+                friend bool operator<=( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator<=( const Utf8String& lhs, const std::string& rhs );
+
+                friend bool operator>=( const Utf8String& lhs, const Utf8String& rhs );
+                friend bool operator>=( const char* lhs, const Utf8String& rhs );
+                friend bool operator>=( const Utf8String& lhs, const char* rhs );
+                friend bool operator>=( const std::string& lhs, const Utf8String& rhs );
+                friend bool operator>=( const Utf8String& lhs, const std::string& rhs );
 
 
             friend void swap( Utf8String& first, Utf8String& second );
@@ -71,7 +117,7 @@ namespace jet{
 
         public:
 
-            bool operator()( Utf8String const &left, Utf8String const &right ) const;
+            int operator()( Utf8String const &left, Utf8String const &right ) const;
 
     };
 
