@@ -19,6 +19,9 @@ namespace jet{
 
             Utf8String getFilename() const;
 
+            bool exists() const;
+            static bool exists( Utf8String filename );
+
         protected:
             int state;
             Utf8String filename;

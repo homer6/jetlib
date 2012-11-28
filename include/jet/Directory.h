@@ -19,6 +19,7 @@ namespace jet{
             Directory( const char *full_path );
 
             bool exists() const;
+            bool create();
 
             // Caller must free the returned vectors
             vector<File*>* getFiles() const;
@@ -26,6 +27,8 @@ namespace jet{
 
             Utf8String getFullPath() const;
             Utf8String getName() const;
+
+            void appendToPath( Utf8String path_suffix );
 
             // Gets the current working directory as a string.
             static Utf8String getWorkingPath();
