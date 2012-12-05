@@ -5,11 +5,30 @@ project( ${MAIN_EXECUTABLE} CXX C )
 #add_subdirectory( lib )
 
 set( JET_LIBRARY_SOURCES
-    lib/Exception.cc
-    lib/File.cc
     lib/Directory.cc
-    lib/Utf8String.cc
+    lib/File.cc
+    lib/Hostname.cc
+    lib/HttpClient.cc
+    lib/HttpHeader.cc
+    lib/HttpRequest.cc
+    lib/HttpResponse.cc
+    lib/HttpServer.cc
+    lib/IpAddress.cc
+    lib/TcpClient.cc
+    lib/TcpEndpoint.cc
+    lib/TcpServer.cc
+    lib/TcpConnection.cc
+    lib/Int16.cc
+    lib/Int32.cc
+    lib/Int64.cc
+    lib/Int8.cc
+    lib/UnsignedInt16.cc
+    lib/UnsignedInt32.cc
+    lib/UnsignedInt64.cc
+    lib/UnsignedInt8.cc
     lib/Utf8Character.cc
+    lib/Utf8String.cc
+    lib/Exception.cc
 )
 
 add_library( jet_shared SHARED ${JET_LIBRARY_SOURCES} )
