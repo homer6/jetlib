@@ -1,0 +1,3 @@
+[submodule "lib/jet"]
+	path = lib/jet
+	url = git://github.com/homer6/jetlib.git
