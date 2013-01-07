@@ -6,12 +6,9 @@
 #include "jet/File.h"
 #include "jet/Exception.h"
 
-#include "Parser.h"
-
 
 using namespace std;
 using namespace jet;
-using namespace jet::modeler;
 
 
 template< class T >
@@ -26,7 +23,7 @@ void print_as_binary( T value, ostream& output_stream ){
 
 void show_usage(){
 
-    cout << "Usage: jm <filename>" << endl;
+    cout << "Usage: my_exe <filename>" << endl;
 
 }
 
@@ -50,7 +47,6 @@ int main( int argc, char** argv ){
     Utf8String *filename = NULL;
     File *file = NULL;
     Utf8String *contents = NULL;
-    Parser *parser = NULL;
 
     try{
 
@@ -61,13 +57,7 @@ int main( int argc, char** argv ){
         contents = new Utf8String;
         *contents = file->getContents();
 
-        parser = new Parser;
-        parser->parse( contents );
-
-        cout << endl;
-
-        parser->printModels();
-        parser->writeModelFiles();
+        cout << *contents;
 
     }catch( Exception *e ){
 
@@ -76,7 +66,6 @@ int main( int argc, char** argv ){
 
     }
 
-    if( parser != NULL ) delete parser;
     if( contents != NULL ) delete contents;
     if( file != NULL ) delete file;
     if( filename != NULL ) delete filename;
