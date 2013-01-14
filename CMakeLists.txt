@@ -40,10 +40,13 @@ set( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/build )
 include_directories( include )
 
 add_executable( ${MAIN_EXECUTABLE} tests/main.cc )
-target_link_libraries( ${MAIN_EXECUTABLE} jet_shared )
 
+#Currently compiled the tests executable with shared libraries. Change the below
+#"jet_shared" to "jet_static" to use static linking instead.
+target_link_libraries( ${MAIN_EXECUTABLE} jet_shared )
 
 if( CMAKE_COMPILER_IS_GNUCXX )
     message( STATUS "GCC detected, adding compile flags" )
     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3 -std=gnu++0x -g" )
 endif( CMAKE_COMPILER_IS_GNUCXX )
+
