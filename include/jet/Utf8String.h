@@ -113,8 +113,12 @@ namespace jet{
             size_t size_of_character_data; //in bytes
             char *characters; //POD with no BOM
 
-            //assumption: when size_of_character_data == 0, characters == NULL
-            //            and has no heap allocation
+            //Invariant 001:
+            //      when size_of_character_data == 0
+            //          characters == NULL and has no heap allocation
+            //      However, if getSize() == 0
+            //          size_of_character_data == 1 (the null terminator) and
+            //          there is a heap allocation
 
     };
 
