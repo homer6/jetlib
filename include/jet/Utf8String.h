@@ -126,6 +126,12 @@ namespace jet{
     };
 
 
+    Utf8String operator+( const char *left, const Utf8String& right );
+    Utf8String operator+=( const char *left, const Utf8String& right );
+    Utf8String operator+( const char left, const Utf8String& right );
+    Utf8String operator+=( const char left, const Utf8String& right );
+
+
     class Utf8StringComparator{
 
         public:
