@@ -94,6 +94,7 @@ namespace jet{
             friend void swap( Utf8String& first, Utf8String& second );
             friend std::ostream& operator<<( std::ostream &output_stream, const Utf8String &output_string );
             friend std::ostream& print_as_binary( std::ostream &output_stream, const Utf8String &output_string );
+            friend std::ostream& print_as_hex( std::ostream &output_stream, const Utf8String &output_string );
 
 
             char getAsciiCharacterAtIndex( size_t index ) const;
@@ -103,12 +104,15 @@ namespace jet{
             void clear();
             bool isEmpty() const;  //determines if this string is empty
             unsigned int getSize() const;  //alias of getLength (number of characters)
-            unsigned int getLength() const;  //alias of getSize (number of characters)
-            void printAsBinary( std::ostream& output_stream );    //prints a full binary representation of this string to the supplied output stream
+            unsigned int getLength() const;  //alias of getSize (number of characters)            
 
             Utf8String toCamelCase() const;
             Utf8String toLowerCase() const;
             Utf8String toUpperCase() const;
+
+            //Works the same way as http://php.net/manual/en/function.escapeshellarg.php
+            //Returns a copy.
+            Utf8String escapeShellArgument() const;
 
         protected:
             bool include_bom;
