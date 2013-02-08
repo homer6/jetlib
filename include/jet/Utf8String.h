@@ -38,6 +38,9 @@ namespace jet{
                 Utf8String& operator+=( const char right );
                 Utf8String operator+( const char right );
 
+                Utf8String& operator+=( const char* right );
+                Utf8String operator+( const char* right );
+
 
             //comparison operators
 
