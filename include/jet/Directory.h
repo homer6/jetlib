@@ -15,7 +15,7 @@ namespace jet{
 
         public:
             Directory();
-            Directory( Utf8String full_path );
+            Directory( const Utf8String &full_path );
             Directory( const char *full_path );
 
             bool exists() const;
@@ -32,6 +32,8 @@ namespace jet{
 
             // Gets the current working directory as a string.
             static Utf8String getWorkingPath();
+            static bool isDirectory( const Utf8String &full_path );
+            static bool isDirectory( const char *full_path );
 
 
         protected:
