@@ -21,7 +21,7 @@ namespace jet{
             bool exists() const;
             bool create();
 
-            // Caller must free the returned vectors
+            // Caller must free the returned vectors (and each of the directories or files)
             vector<File*>* getFiles() const;
             vector<Directory*>* getDirectories() const;
 
