@@ -33,13 +33,13 @@ namespace jet{
                 Utf8String& operator=( const char *other );
 
                 Utf8String& operator+=( const Utf8String &right );
-                Utf8String operator+( const Utf8String &right );
+                Utf8String operator+( const Utf8String &right ) const;
 
                 Utf8String& operator+=( const char right );
-                Utf8String operator+( const char right );
+                Utf8String operator+( const char right ) const;
 
                 Utf8String& operator+=( const char* right );
-                Utf8String operator+( const char* right );
+                Utf8String operator+( const char* right ) const;
 
 
             //comparison operators
