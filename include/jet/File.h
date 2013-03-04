@@ -25,7 +25,6 @@ namespace jet{
         protected:
             int state;
             Utf8String filename;
-            Utf8String contents;
 
     };
 
