@@ -12,8 +12,14 @@ namespace jet{
             Exception( const char *exception_message );
             Exception( const Utf8String exception_message );
 
+            Exception( const char *exception_message, const char *filename, const int line_number );
+            Exception( const Utf8String exception_message, const char *filename, const int line_number );
+
+
 
             Utf8String message;
+            Utf8String filename;
+            int line_number;
 
     };
 
