@@ -22,8 +22,18 @@ namespace jet{
             explicit Utf8String( char source_character );
             explicit Utf8String( const std::string& source_string );
             explicit Utf8String( const Utf8Character& other );
-            Utf8String( int number );
             virtual ~Utf8String();
+
+
+            //lexical casts
+                explicit Utf8String( long number );
+                explicit Utf8String( unsigned long number );
+                explicit Utf8String( int number );
+                explicit Utf8String( unsigned int number );
+                explicit Utf8String( short number );
+                explicit Utf8String( unsigned short number );
+
+
 
 
             //assignment operators

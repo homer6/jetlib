@@ -9,6 +9,7 @@ namespace jet{
     class Exception{
 
         public:
+            Exception();
             Exception( const char *exception_message );
             Exception( const Utf8String exception_message );
 
