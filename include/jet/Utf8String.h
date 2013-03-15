@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 #include "Utf8Character.h"
 
@@ -119,6 +120,7 @@ namespace jet{
             Utf8String toCamelCase() const;
             Utf8String toLowerCase() const;
             Utf8String toUpperCase() const;
+            std::vector<Utf8String> split( char delimiter ) const;
 
             //Works the same way as http://php.net/manual/en/function.escapeshellarg.php
             //Returns a copy.
