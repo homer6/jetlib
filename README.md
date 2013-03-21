@@ -56,8 +56,8 @@ Download and Install
     cmake .
     make
 
-    sudo ln -s `pwd`/build/libjet_shared.so /usr/lib/libjet_shared.so
-    sudo ln -s `pwd`/build/libjet_static.a /usr/lib/libjet_static.a
+    sudo ln -fs `pwd`/build/libjet_shared.so /usr/lib/libjet_shared.so
+    sudo ln -fs `pwd`/build/libjet_static.a /usr/lib/libjet_static.a
 
 
 
