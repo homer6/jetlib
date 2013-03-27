@@ -18,7 +18,7 @@ namespace jet{
             Utf8String();
             Utf8String( const Utf8String& other );
             explicit Utf8String( Utf8String&& other );
-            explicit Utf8String( const char *source_string, size_t size_in_bytes );
+            explicit Utf8String( const char *source_string, size_t size_in_bytes, bool copy = true );
             explicit Utf8String( const char *source_string );    //don't provide unsafe strings!!
             explicit Utf8String( char source_character );
             explicit Utf8String( const std::string& source_string );
@@ -115,7 +115,7 @@ namespace jet{
             void clear();
             bool isEmpty() const;  //determines if this string is empty
             unsigned int getSize() const;  //alias of getLength (number of characters)
-            unsigned int getLength() const;  //alias of getSize (number of characters)            
+            unsigned int getLength() const;  //alias of getSize (number of characters)
 
             Utf8String toCamelCase() const;
             Utf8String toLowerCase() const;
@@ -156,6 +156,56 @@ namespace jet{
 
     };
 
+
+    inline unsigned int Utf8String::getSize() const{
+
+        return this->number_of_characters;
+
+    }
+
+
+    inline unsigned int Utf8String::getLength() const{
+
+        return this->number_of_characters;
+
+    }
+
+
+    inline bool Utf8String::isEmpty() const{
+
+        return this->getSize() == 0;
+
+    }
+
+
+    inline Utf8String::~Utf8String(){
+
+        if( this->size_of_character_data != 0 ){
+            delete[] this->characters;
+        }
+
+    }
+
+
+
+    inline const char* Utf8String::getCString() const{
+
+        return this->characters;
+
+    }
+
+
+    inline char Utf8String::getAsciiCharacterAtIndex( size_t index ) const{
+
+        if( index >= this->number_of_characters ){
+
+            throw "Index out of range.";
+
+        }
+
+        return this->characters[ index ];
+
+    }
 
 
 }
