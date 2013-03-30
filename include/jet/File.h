@@ -13,7 +13,7 @@ namespace jet{
             File( Utf8String filename );
             File( const char *filename );
 
-            void write( Utf8String &output );
+            void write( Utf8String output );
             void write( const char *output );
             Utf8String getContents();
 
