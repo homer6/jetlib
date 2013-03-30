@@ -18,6 +18,7 @@ namespace jet{
             Utf8String getContents();
 
             Utf8String getFilename() const;
+            void setFilename( Utf8String filename );
 
             bool exists() const;
             static bool exists( Utf8String filename );

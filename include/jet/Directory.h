@@ -26,6 +26,7 @@ namespace jet{
             vector<Directory*>* getDirectories() const;
 
             Utf8String getFullPath() const;
+            void setFullPath( Utf8String new_path );
             Utf8String getName() const;
 
             void appendToPath( Utf8String path_suffix );
