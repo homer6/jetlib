@@ -121,6 +121,7 @@ namespace jet{
             Utf8String toLowerCase() const;
             Utf8String toUpperCase() const;
             std::vector<Utf8String> split( char delimiter ) const;
+            Utf8String join( std::vector<Utf8String> ) const;
 
             //Works the same way as http://php.net/manual/en/function.escapeshellarg.php
             //Returns a copy.
