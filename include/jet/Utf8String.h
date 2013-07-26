@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <list>
 
 #include "Utf8Character.h"
 
@@ -122,7 +123,29 @@ namespace jet{
             Utf8String toLowerCase() const;
             Utf8String toUpperCase() const;
             std::vector<Utf8String> split( char delimiter ) const;
-            Utf8String join( std::vector<Utf8String> ) const;
+
+
+            template < class T = std::vector<Utf8String> >
+            Utf8String join( T my_list ) const{
+
+                const Utf8String delimeter( *this );
+                Utf8String returned_string;
+                int x = 0;
+                for( Utf8String item : my_list ){
+
+                    if( x != 0 ){
+                        returned_string += delimeter;
+                    }
+                    returned_string += item;
+
+                    ++x;
+
+                }
+
+                return returned_string;
+
+            }
+
 
             //Works the same way as http://php.net/manual/en/function.escapeshellarg.php
             //Returns a copy.
@@ -208,6 +231,7 @@ namespace jet{
         return this->characters[ index ];
 
     }
+
 
 
 }
