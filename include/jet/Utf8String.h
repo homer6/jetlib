@@ -119,7 +119,7 @@ namespace jet{
             unsigned int getLength() const;  //alias of getSize (number of characters)
 
             Utf8String toCamelCase() const;
-            Utf8String toUnderscoreCase() const;
+            Utf8String toUnderscoreCase( bool clean = false ) const;
             Utf8String toLowerCase() const;
             Utf8String toUpperCase() const;
             std::vector<Utf8String> split( char delimiter ) const;
