@@ -36,6 +36,7 @@ namespace jet{
                 explicit Utf8String( unsigned short number );
 
 
+            char& operator[]( const int index );
 
 
             //assignment operators
