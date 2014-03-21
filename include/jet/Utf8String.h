@@ -151,6 +151,7 @@ namespace jet{
             //Works the same way as http://php.net/manual/en/function.escapeshellarg.php
             //Returns a copy.
             Utf8String escapeShellArgument() const;
+            Utf8String escapeBrowserText() const;
 
         protected:
             bool include_bom;
